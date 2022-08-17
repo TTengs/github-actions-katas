@@ -51,6 +51,8 @@ jobs:
           password: ${{ env.docker_password }}
       - name: Set env
         run: echo "GIT_COMMIT=${GIT_COMMIT::8}" >> $GITHUB_ENV
+      - name: test
+        run: echo $GITHUB_ENV
       - name: Build and push
         uses: docker/build-push-action@v2
         with:
